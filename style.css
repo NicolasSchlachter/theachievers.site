@@ -1,0 +1,278 @@
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body */
+body {
+    font-family: 'Georgia', serif;
+    color: #3D405B; /* Main text color */
+    line-height: 1.8;
+    background-color: #F4F1DE; /* Light beige */
+}
+
+/* Header */
+header {
+    background: #81B29A; /* Muted green */
+    text-align: center;
+    padding: 2rem 0;
+    border-bottom: 1px solid #ddd;
+}
+
+header nav ul {
+    display: flex;
+    justify-content: center;
+    list-style: none;
+    gap: 1.5rem;
+    padding: 0;
+}
+
+header nav ul li a {
+    text-decoration: none;
+    color: #F4F1DE; /* Light beige */
+    font-size: 1.1rem;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+header nav ul li a:hover {
+    color: #E07A5F; /* Reddish-orange */
+}
+
+/* Section Container */
+.content, .chart-container {
+    max-width: 900px;
+    margin: 2rem auto;
+    background: #FFF; /* White for contrast */
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Content Styles */
+.content h2, .chart-container h2 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    color: #E07A5F; /* Dark blue-gray */
+    text-align: center;
+}
+
+.content h3, .chart-container h3 {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    color: #E07A5F; /* Reddish-orange */
+    text-align: center;
+}
+
+.content h6, .chart-container h6 {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    color: #E07A5F; /* Reddish-orange */
+    text-align: left;
+    font-weight: bold; /* Strong effect */
+}
+
+
+.content p, .chart-container p {
+    font-size: 1.1rem;
+    color: #555;
+    text-align: center;
+}
+
+.content ul {
+    list-style-type: disc;
+    padding-left: 1.5rem;
+    color: #555;
+    margin-top: 1rem;
+}
+
+/* Team Member Cards */
+.team-member {
+    background: #F2CC8F; /* Soft orange */
+    margin: 1.5rem 0;
+    padding: 1.5rem;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.team-member h3 {
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+    color: #E07A5F; /* Reddish-orange */
+}
+
+.team-member p {
+    font-size: 1rem;
+    color: #3D405B; /* Dark blue-gray */
+}
+
+/* Chart Container */
+.chart-container {
+    width: 60%;
+    max-width: 600px;
+    text-align: center;
+}
+
+canvas {
+    width: 100% !important; 
+    height: auto !important; 
+}
+
+
+
+/* Reusable Utility Classes */
+.text-center {
+    text-align: center;
+}
+
+.text-left {
+    text-align: left;
+}
+
+.mb-1 {
+    margin-bottom: 1rem;
+}
+
+.mt-2 {
+    margin-top: 2rem;
+}
+
+.mt-1 {
+    margin-top: 1rem;
+}
+
+.gap {
+    gap: 1rem;
+}
+
+footer {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    text-align: center;
+    padding: 1rem 0;
+    background-color: #81B29A; /* Light beige */
+    color: #3D405B; /* Dark blue-gray */
+    font-size: 0.9rem;
+}
+
+/* Contact Form Container */
+.contact-form {
+    max-width: 800px;
+    margin: 4rem auto;
+    background: #FFF;
+    padding: 2.5rem;
+    border-radius: 12px;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+    font-family: 'Georgia', serif;
+}
+
+/* Form Heading */
+.contact-form h2 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    color: #E07A5F; /* Reddish-orange */
+    text-align: center;
+}
+
+/* Form Fields */
+.contact-form input[type="text"],
+.contact-form input[type="email"],
+.contact-form textarea {
+    width: 100%;
+    padding: 1.2rem;
+    border: 2px solid #ddd;
+    border-radius: 10px;
+    font-size: 1.1rem;
+    color: #333;
+    background-color: #f7f7f7;
+    transition: all 0.3s ease;
+    margin-bottom: 1.8rem; /* Adds spacing between fields */
+    box-sizing: border-box; /* Ensures padding doesn't overflow */
+}
+
+/* Focused Input Fields */
+.contact-form input[type="text"]:focus,
+.contact-form input[type="email"]:focus,
+.contact-form textarea:focus {
+    border-color: #81B29A; /* Greenish highlight color */
+    outline: none;
+    box-shadow: 0 0 8px rgba(129, 178, 154, 0.6);
+}
+
+/* Submit Button */
+.contact-form button {
+    background-color: #E07A5F; /* Reddish-orange */
+    color: white;
+    border: none;
+    padding: 1.2rem 2rem;
+    border-radius: 10px;
+    font-size: 1.2rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    margin-top: 1rem;
+    align-self: center; /* Center the button */
+}
+
+.contact-form button:hover {
+    background-color: #D96B4F; /* Darker shade of orange on hover */
+    transform: translateY(-2px); /* Button hover effect */
+}
+
+/* Label Styling */
+.contact-form label {
+    font-size: 1.1rem;
+    color: #3D405B; /* Dark text color */
+    margin-bottom: 0.5rem;
+    font-weight: bold;
+}
+
+/* Textarea */
+.contact-form textarea {
+    resize: vertical;
+    height: 180px;
+}
+
+/* Optional: Form Layout Adjustment */
+.contact-form form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+/* Optional: Adding space between form fields */
+.contact-form div {
+    display: flex;
+    flex-direction: column;
+}
+
+/* Centering Form and Improving Responsiveness */
+.contact-form {
+    width: 90%;
+    max-width: 900px;
+}
+
+@media (max-width: 768px) {
+    .contact-form {
+        padding: 1.5rem;
+    }
+    .contact-form h2 {
+        font-size: 2rem;
+    }
+    .contact-form input[type="text"],
+    .contact-form input[type="email"],
+    .contact-form textarea {
+        padding: 1rem;
+        font-size: 1rem;
+    }
+    .contact-form button {
+        padding: 1rem 1.5rem;
+    }
+}
+
+
+
+
