@@ -74,7 +74,6 @@ header nav ul li a:hover {
     font-weight: bold; /* Strong effect */
 }
 
-
 .content p, .chart-container p {
     font-size: 1.1rem;
     color: #555;
@@ -119,8 +118,6 @@ canvas {
     width: 100% !important; 
     height: auto !important; 
 }
-
-
 
 /* Reusable Utility Classes */
 .text-center {
@@ -217,9 +214,16 @@ footer {
     align-self: center; /* Center the button */
 }
 
+/* Hover Effect */
 .contact-form button:hover {
     background-color: #D96B4F; /* Darker shade of orange on hover */
     transform: translateY(-2px); /* Button hover effect */
+}
+
+/* Active (Pressed) Effect */
+.contact-form button:active {
+    background-color: #C65A43; /* Solid orange when pressed */
+    transform: translateY(2px); /* Slight push-down effect when pressed */
 }
 
 /* Label Styling */
@@ -273,6 +277,43 @@ footer {
     }
 }
 
+.custom-list {
+    font-size: 20px;
+}
 
+/* Team Member Cards */
+.team-member {
+    position: relative; /* Enables precise positioning within the card */
+    background: #F2CC8F; /* Soft orange */
+    margin: 1.5rem 0;
+    padding: 1.5rem;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    overflow: hidden; /* Prevents content overflow */
+}
 
+/* Image Styling */
+.team-member img {
+    float: right; /* Positions the image on the right */
+    max-width: 120px; /* Set a consistent size for images */
+    height: auto; /* Maintain aspect ratio */
+    border-radius: 50%; /* Circular images */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Add some shadow for better visuals */
+    margin-left: 1.5rem; /* Adds spacing between text and image */
+    margin-top: -110px; /* Aligns image with text visually */
+}
 
+@media (max-width: 500px) {
+    .content {
+        text-align: center; /* Center text within the container */
+    }
+
+    .content .legislatie-image {
+        max-width: 80%; /* Scale down the image further */
+        height: auto; /* Maintain the aspect ratio */
+        margin-top: 1rem; /* Add spacing above the image */
+        display: block; /* Ensure the image is treated as a block-level element */
+        margin-left: auto; /* Center the image horizontally */
+        margin-right: auto; /* Center the image horizontally */
+    }
+}

@@ -1,0 +1,139 @@
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body */
+body {
+    font-family: 'Georgia', serif;
+    color: #3D405B; /* Main text color */
+    line-height: 1.8;
+    background-color: #F4F1DE; /* Light beige */
+}
+
+/* Header */
+header {
+    background: #81B29A; /* Muted green */
+    text-align: center;
+    padding: 2rem 0;
+    border-bottom: 1px solid #ddd;
+}
+
+header nav ul {
+    display: flex;
+    justify-content: center;
+    list-style: none;
+    gap: 1.5rem;
+    padding: 0;
+}
+
+header nav ul li a {
+    text-decoration: none;
+    color: #F4F1DE; /* Light beige */
+    font-size: 1.1rem;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+header nav ul li a:hover {
+    color: #E07A5F; /* Reddish-orange */
+}
+
+/* Section Container */
+.content {
+    display: flex; /* Align text and image horizontally */
+    align-items: flex-start; /* Align text and image at the top */
+    gap: 20px; /* Adds space between text and image */
+    max-width: 900px;
+    margin: 2rem auto;
+    background: #FFF; /* White for contrast */
+    padding: 20px; /* Padding for the section */
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Styling for the text portion */
+.content .text-content {
+    flex: 2; /* Gives more space to the text */
+}
+
+/* Styling for the image */
+.content .legislatie-image {
+    flex: 1; /* Allows the image to take up less space */
+    max-width: 300px; /* Limit the image size */
+    height: auto; /* Maintain aspect ratio */
+    border: 2px solid #ddd; /* Optional border */
+    border-radius: 10px; /* Optional rounded corners */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Optional shadow */
+}
+
+/* Content Styles */
+.content h2 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    color: #E07A5F; /* Reddish-orange */
+    text-align: center;
+}
+
+.content h3 {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    color: #E07A5F; /* Reddish-orange */
+    text-align: center;
+}
+
+.content p {
+    font-size: 1.1rem;
+    color: #555;
+    text-align: center;
+}
+
+.content ul {
+    list-style-type: disc;
+    padding-left: 1.5rem;
+    color: #555;
+    margin-top: 1rem;
+}
+
+/* Footer */
+footer {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    text-align: center;
+    padding: 1rem 0;
+    background-color: #81B29A; /* Muted green */
+    color: #F4F1DE; /* Light beige */
+    font-size: 0.9rem;
+}
+
+/* Utility Classes */
+.text-center {
+    text-align: center;
+}
+
+.text-left {
+    text-align: left;
+}
+
+.mb-1 {
+    margin-bottom: 1rem;
+}
+
+.mt-2 {
+    margin-top: 2rem;
+}
+
+.mt-1 {
+    margin-top: 1rem;
+}
+
+.gap {
+    gap: 1rem;
+}
+
+
+

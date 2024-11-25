@@ -1,10 +1,22 @@
 document.addEventListener('DOMContentLoaded', () => {
-    // Data for the chart (mocked for now)
+    // Chart rendering logic remains unchanged
     const years = ['2018', '2019', '2020', '2021', '2022'];
     const dataValues = [1200, 1250, 1300, 1280, 1350]; // Number of children with disabilities
 
-    // Chart rendering
-    const ctx = document.getElementById('disabilitiesChart').getContext('2d');
+    const chartCanvas = document.getElementById('disabilitiesChart');
+    const pixelRatio = window.devicePixelRatio || 1;
+    const width = 800; // Set desired width
+    const height = 400; // Set desired height
+
+    chartCanvas.width = width * pixelRatio; // Multiply by pixel ratio
+    chartCanvas.height = height * pixelRatio; // Multiply by pixel ratio
+    chartCanvas.style.width = `${width}px`; // Set CSS width
+    chartCanvas.style.height = `${height}px`; // Set CSS height
+
+    const ctx = chartCanvas.getContext('2d');
+    ctx.scale(pixelRatio, pixelRatio); // Scale the canvas context for higher DPI
+
+    // Render the chart
     new Chart(ctx, {
         type: 'line',
         data: {
@@ -19,7 +31,8 @@ document.addEventListener('DOMContentLoaded', () => {
             }]
         },
         options: {
-            responsive: true,
+            responsive: false,
+            maintainAspectRatio: false,
             plugins: {
                 legend: {
                     position: 'top',
@@ -63,40 +76,31 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 
-    // Form submission logic
+    // Form submission logic using EmailJS SDK
     const form = document.getElementById('contact-form');
 
-    form.addEventListener('submit', async (event) => {
+    form.addEventListener('submit', (event) => {
         event.preventDefault();
 
         const formData = new FormData(form);
 
-        try {
-            const response = await fetch('https://api.emailjs.com/api/v1.0/email/send', {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json'
-                },
-                body: JSON.stringify({
-                    service_id: 'service_5bviupm',  // Replace with your service ID
-                    template_id: 'template_djow30r',  // Replace with your template ID
-                    user_id: 'AAi49bahWOT7-W6zp',  // Replace with your user ID
-                    template_params: {
-                        name: formData.get('name'),
-                        email: formData.get('email'),
-                        message: formData.get('message')
-                    }
-                })
-            });
+        // Replace with your EmailJS keys
+        const serviceID = 'service_5bviupm';
+        const templateID = 'template_djow30r';
+        const userID = 'AAi49bahWOT7-W6zp';
 
-            if (response.ok) {
-                alert("Mesaj trimis cu succes!");
-                form.reset();
-            } else {
-                throw new Error("Eroare la trimiterea mesajului.");
-            }
-        } catch (error) {
-            alert(error.message);
-        }
+        emailjs.send(serviceID, templateID, {
+            name: formData.get('name'),
+            email: formData.get('email'),
+            message: formData.get('message')
+        }, userID)
+        .then(() => {
+            alert('Mesaj trimis cu succes!');
+            form.reset();
+        })
+        .catch((error) => {
+            console.error('Eroare:', error);
+            alert('Eroare la trimiterea mesajului. Verificați consola pentru detalii.');
+        });
     });
 });
